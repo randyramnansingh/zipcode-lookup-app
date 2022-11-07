@@ -9,7 +9,7 @@
   "type": "module",
   "scripts": {
     "compile": "tsc",
-    "test": "node --no-warnings --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test": "node --no-warnings --experimental-vm-modules node_modules/jest/bin/jest.js src/index.test.ts",
     "start": "npm run compile && node ./dist/index.js"
   },
   "keywords": [],
