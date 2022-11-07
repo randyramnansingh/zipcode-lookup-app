@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      dockerfile: Dockerfile
+      context: "./app"
+    volumes:
+      - /app/node_modules
+      - ./app:/app
+
+  web:
+    environment:
+      - REACT_APP_BACKEND_APP=http://app:4000
+    build:
+      dockerfile: Dockerfile
+      context: ./web
+    volumes:
+      - /web/node_modules
+      - ./web:/app
+    ports:
+      - "80:3000"
